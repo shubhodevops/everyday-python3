@@ -1,0 +1,190 @@
+100+ Python challenging programming exercises for Python 3
+https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md
+
+--------------------------------------------
+#.Use join() to Concatenate Strings
+", ".join(["Python", "Java", "C++"])
+
+#9.Slicing Lists
+my_list[::-1]  # Reverses the list
+
+# Checks for empty list
+if not my_list:  
+    print("List is empty")
+
+#19.List Flattening
+nested = [[1, 2], [3, 4]]
+flat = [item for sublist in nested for item in sublist]
+
+#10.The Walrus Operator (:=)
+if (n := len(data)) > 10:
+    print(f"{n} items found.")
+
+---------------------------------
+
+Error Handling syntax:
+
+try:
+    value = int(user_input)
+except ValueError:
+    value = 0
+------------------------------------
+
+https://www.datacamp.com/tutorial/python-tips-examples
+
+--------------------------------------
+if not a:
+    # do something... 
+
+This code snippet is written in Python and it uses an "if" statement to check if the variable "a" is False or empty. If "a" is False or empty, then the code inside the if block will be executed. The "not" keyword is used to negate the value of "a", so if "a" is False or empty, "not a" will be True and the code inside the if block will be executed.
+
+----------------------------------
+Essential Python programming tips and tricks include in-place variable swapping (a, b = b, a), 
+
+using enumerate() instead of manual index loops, and leveraging list/dictionary comprehensions for clean, fast code.
+
+Code Shortcuts and Syntax In-place swap: Switch two values instantly using x, y = y, x without a temp variable.
+
+String reverse: Reverse any string instantly using slice notation text[::-1].
+
+Chained comparisons: Write clean mathematical bounds like 1 < age < 60 instead of age > 1 and age < 60.
+
+Walrus operator: Assign and return values inside an expression using := (e.g., if (n := len(a)) > 5:)
+
+Remove duplicates: Convert a list to a set and back using list(set(my_list)) to clear out duplicate entries
+
+Check if items exist: Use if "apple" in fruits: instead of looping to search.
+
+
+
+----------------------------------
+1. Remove Multiple Characters Fast with str.translate()Chaining .replace() multiple times forces Python to loop through and rebuild the string repeatedly. The str.translate() method processes character mapping or deletion across the entire string in a single, lightning-fast C-level loop.
+
+import string
+
+dirty_text = "Error #404: Connection failed! [Attempt 1]..."
+
+# Create a removal table using the third argument of maketrans
+remove_table = str.maketrans("", "", string.punctuation)
+clean_text = dirty_text.translate(remove_table)
+
+print(clean_text)  # Output: Error 404 Connection failed Attempt 1
+
+
+
+------------
+4. Remove Prefixes and Suffixes SafelyUsing .lstrip() or .rstrip() can lead to unexpected bugs because they treat characters as a set, 
+stripping unrelated letters if they match. Use .removeprefix() and .removesuffix() for exact substring matching
+
+filename = "backup_2026_data.csv.tmp"
+
+# The old, dangerous way: filename.rstrip(".tmp") might remove 'p' or 'm' from data!
+
+# The clean, modern way:
+no_prefix = filename.removeprefix("backup_2026_")
+final_name = no_prefix.removesuffix(".tmp")
+
+print(final_name)  # Output: data.csv
+
+
+--------------------------
+2. Flatten Nested Logic with any() and all()Avoid messy chains of if / elif / or conditions when validating business rules or configurations. 
+
+Use any() and all() paired with generator expressions for instant readability.
+
+flags = [True, False, True]
+user_inputs = ["admin", "password123", ""]
+
+# Check if at least one flag is active
+if any(flags):
+    print("Action required.")
+
+# Ensure all strings in a list are non-empty
+if all(len(item) > 0 for item in user_inputs):
+    print("All inputs are valid.")
+
+
+
+---------------------
+print("-"*50)
+print("welcome")
+print("-"*50)
+--------------------
+Clean Code & Loops enumerate() instead of range(len()): 
+
+Get both the index and value at the same time without tracking lengths manually.
+
+zip() for parallel loops: Loop over two or more lists at the same time cleanly.
+
+List and Dict Comprehensions: Replace multi-line filter-and-append loops with fast, readable single-line expressions.
+
+The Walrus Operator (:=): Assign values inside a condition or loop to avoid running the same expression twice.
+
+
+
+# List comprehension
+squares = [x**2 for x in range(10)]
+
+# Dictionary comprehension
+name_lengths = {name: len(name) for name in ["Alice", "Bob"]}
+
+#Iterate with enumerate(): Get both the item index and the value simultaneously without manual counters.
+
+for index, value in enumerate(["a", "b", "c"]):
+    print(index, value)
+
+#Zip Multiple Iterables: Loop through two or more lists at the same time in parallel.
+names = ["Alice", "Bob"]
+scores = [85, 92]
+for name, score in zip(names, scores):
+    print(f"{name}: {score}")
+
+
+#Easy Counting with Counter: Skip tracking frequencies manually; use collections.Counter to count items instantly.
+
+from collections import Counter
+words = ["apple", "banana", "apple"]
+counts = Counter(words)  # {'apple': 2, 'banana': 1}
+
+#Graceful Dictionary Defaults: Avoid KeyError crashes when looking up missing dictionary keys.
+# Method 1: Use .get() to provide a fallback value
+user_profile.get("theme", "dark_mode")
+
+# Method 2: Use defaultdict to generate automated values on the fly
+from collections import defaultdict
+grouped_data = defaultdict(list)
+grouped_data["new_key"].append(1)  # Automatically initializes an empty list first
+
+
+
+
+
+# 1. Example of  Dynamic Alignment: Auto-adjusting spaces before the colon
+width = 20
+name=input("Name: ")
+print(f"{'Name':<{width}}:{name}")
+print(f"{'Account Status':<{width}}:Active")
+
+# 2. Error Handling: Remove leading/trailing spaces
+name = input("Enter your Name: ").strip()
+
+# string.capwords() is a utility function used to capitalize the first 
+# letter of every word in a string while converting all other letters to lowercase
+# string.capwords() is not a built-in string method. You must import string to use it.
+ #3. USE of string.capwords()
+import string
+
+name = input("Enter your Name: ")
+
+# Formats inside the f-string
+print(f"Name               :{string.capwords(name)}")
+
+#04. alternative use of string.capwords()
+
+import string
+
+# Captures and capitalizes right away
+name = string.capwords(input("Enter your Name: "))
+
+print(f"Name               :{name}")
+
