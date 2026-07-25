@@ -1,0 +1,35 @@
+print("-"*50)
+print("welcome")
+print("-"*50)
+--------------------
+
+
+# 1. Example of  Dynamic Alignment: Auto-adjusting spaces before the colon
+width = 20
+name=input("Name: ")
+print(f"{'Name':<{width}}:{name}")
+print(f"{'Account Status':<{width}}:Active")
+
+# 2. Error Handling: Remove leading/trailing spaces
+name = input("Enter your Name: ").strip()
+
+# string.capwords() is a utility function used to capitalize the first 
+# letter of every word in a string while converting all other letters to lowercase
+# string.capwords() is not a built-in string method. You must import string to use it.
+ #3. USE of string.capwords()
+import string
+
+name = input("Enter your Name: ")
+
+# Formats inside the f-string
+print(f"Name               :{string.capwords(name)}")
+
+#04. alternative use of string.capwords()
+
+import string
+
+# Captures and capitalizes right away
+name = string.capwords(input("Enter your Name: "))
+
+print(f"Name               :{name}")
+
