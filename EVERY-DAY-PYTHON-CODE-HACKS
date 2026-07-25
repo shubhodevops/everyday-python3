@@ -1,3 +1,31 @@
+
+Set Comprehension
+
+Returns a unique, unordered collection. It uses a single value expression.
+# Syntax
+new_set = {expression for item in iterable if condition}
+
+
+Dictionary Comprehension
+
+Returns a collection of key-value pairs. It uses a key: value expression.
+
+# Syntax
+new_dict = {key_expression: value_expression for item in iterable if condition}
+
+--------------------------------------------
+
+Golden Rule of Python Lists in Programming
+
+"If you have multiple related items — use a list."
+
+Multiple users → list
+Multiple products → list
+Multiple scores → list
+Multiple steps → list
+
+--------------------------------------
+
 100+ Python challenging programming exercises for Python 3
 https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md
 
