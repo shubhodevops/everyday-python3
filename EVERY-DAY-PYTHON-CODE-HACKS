@@ -1,3 +1,20 @@
+Mutability vs. Immutability
+
+This distinction is the root cause of countless bugs for junior developers.
+
+    Immutable Objects (int, float, str, tuple, bool): Cannot be changed after creation. When you modify a string, Python doesn't change the original; it spawns a brand-new string object in memory and moves your name tag to it.
+
+    Mutable Objects (list, dict, set): Can be altered in place. Multiple name tags pointing to the same mutable object will all see the changes.
+
+-------------------------------------------------
+
+The Lookup DifferenceIf you need to check if an ID exists among 1 million users:
+Checking a list requires 
+
+Python to scan from start to finish ($O(n)$).
+Checking a set uses a hash table to jump directly to the item instantly ($O(1)$).
+
+--------------------------------------------
 
 Set Comprehension
 
