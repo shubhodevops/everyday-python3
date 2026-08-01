@@ -9,7 +9,7 @@ def print_app_name():
 
 
 # =============================================
-# STEP 3: Calculator Functions
+# STEP 3: Calculator Functions (Mini Project)
 # =============================================
 def addition(num1, num2):
     """Returns the sum of two numbers"""
@@ -47,7 +47,7 @@ def floor_division(num1, num2):
 
 
 # =============================================
-# STEP 11: Advanced Calculator Functions
+# STEP 11: Advanced Calculator Functions (Bonus Challenge)
 # =============================================
 def percentage_calculator(num1, num2):
     """Calculates what percentage num1 is of num2"""
@@ -81,7 +81,7 @@ def minimum_of_two(num1, num2):
 
 
 # =============================================
-# STEP 4: Calculator Menu
+# STEP 4: Calculator Menu using enumerate()
 # =============================================
 def display_menu():
     """Displays the main calculator menu"""
@@ -97,17 +97,17 @@ def display_menu():
         "Modulus",
         "Power",
         "Floor Division",
-        "Advance Calculator",
         "Exit"
     ]
     
+    # Using enumerate() to display menu with numbers
     for index, item in enumerate(menu_items, start=1):
         print(f"    {index}. {item}")
     
     print("="*40)
 
 def display_advanced_menu():
-    """Displays the advanced calculator menu"""
+    """Displays the advanced calculator menu (Step 11)"""
     print("\n" + "="*40)
     print("     ADVANCE CALCULATOR")
     print("="*40)
@@ -119,9 +119,10 @@ def display_advanced_menu():
         "Cube Root",
         "Maximum of Two Numbers",
         "Minimum of Two Numbers",
-        "Return to Main Calculator"
+        "Exit Advanced Calculator"
     ]
     
+    # Using enumerate() for advanced menu
     for index, item in enumerate(advanced_items, start=1):
         print(f"    {index}. {item}")
     
@@ -148,53 +149,14 @@ def perform_calculation(operation_func, num1, num2=None):
     else:
         result = operation_func(num1)
     
+    # Check if result is an error message (string)
     if isinstance(result, str):
         print(result)
     else:
         print(f"Result: {result}")
 
-def main_calculator():
-    """Main calculator program"""
-    while True:
-        display_menu()
-        
-        try:
-            choice = int(input("Enter your choice (1-9): "))
-        except ValueError:
-            print("Invalid input! Please enter a number between 1 and 9.")
-            continue
-        
-        # Exit
-        if choice == 9:
-            print("\nThank you for using Smart Calculator! Goodbye!")
-            break
-        
-        # Main operations (1-7)
-        elif 1 <= choice <= 7:
-            num1, num2 = get_two_numbers()
-            
-            operations = {
-                1: addition,
-                2: subtraction,
-                3: multiplication,
-                4: division,
-                5: modulus,
-                6: power,
-                7: floor_division
-            }
-            
-            perform_calculation(operations[choice], num1, num2)
-        
-        # Advanced Calculator (8)
-        elif choice == 8:
-            advanced_calculator()
-        
-        # Invalid choice
-        else:
-            print("Invalid choice! Please select a number between 1 and 9.")
-
 def advanced_calculator():
-    """Advanced calculator sub-menu"""
+    """Advanced calculator sub-menu (Step 11 - Bonus Challenge)"""
     while True:
         display_advanced_menu()
         
@@ -204,8 +166,9 @@ def advanced_calculator():
             print("Invalid input! Please enter a number between 1 and 7.")
             continue
         
-        # Return to main menu
+        # Exit Advanced Calculator (Option 7)
         if choice == 7:
+            print("\nExiting Advanced Calculator...")
             break
         
         # Advanced operations
@@ -236,6 +199,50 @@ def advanced_calculator():
         else:
             print("Invalid choice! Please select a number between 1 and 7.")
 
+def main_calculator():
+    """Main calculator program - Steps 2-5"""
+    while True:
+        display_menu()
+        
+        # Step 5: Input Validation for menu choice
+        try:
+            choice = int(input("Enter your choice (1-8): "))
+        except ValueError:
+            print("Invalid input! Please enter a number between 1 and 8.")
+            continue
+        
+        # Step 4: Exit option
+        if choice == 8:
+            print("\nThank you for using Smart Calculator!")
+            # Call Step 11: Advanced Calculator after exit
+            print("\n" + "="*50)
+            print("    BONUS CHALLENGE: ADVANCED CALCULATOR")
+            print("="*50)
+            advanced_calculator()
+            print("\nReturning to main program...")
+            break
+        
+        # Step 4: Main operations (1-7)
+        elif 1 <= choice <= 7:
+            num1, num2 = get_two_numbers()
+            
+            # Dictionary mapping choices to functions
+            operations = {
+                1: addition,
+                2: subtraction,
+                3: multiplication,
+                4: division,
+                5: modulus,
+                6: power,
+                7: floor_division
+            }
+            
+            perform_calculation(operations[choice], num1, num2)
+        
+        # Step 5: Invalid menu option
+        else:
+            print("Invalid choice! Please select a number between 1 and 8.")
+
 
 # =============================================
 # STEP 7: Lambda Practice (Separate Task)
@@ -246,6 +253,7 @@ def lambda_practice():
     print("        LAMBDA PRACTICE")
     print("="*40)
     
+    # Lambda function to calculate square
     square = lambda x: x ** 2
     
     try:
@@ -267,7 +275,7 @@ def map_practice():
     numbers = [5, 10, 15, 20, 25]
     print(f"Original list: {numbers}")
     
-    # Increase every number by 10 using map with lambda
+    # Using map() with lambda to increase every number by 10
     increased_numbers = list(map(lambda x: x + 10, numbers))
     print(f"After adding 10: {increased_numbers}")
 
@@ -284,7 +292,7 @@ def filter_practice():
     numbers = [5, 10, 15, 20, 25]
     print(f"Original list: {numbers}")
     
-    # Keep only numbers greater than 15 using filter with lambda
+    # Using filter() with lambda to keep numbers greater than 15
     filtered_numbers = list(filter(lambda x: x > 15, numbers))
     print(f"Numbers greater than 15: {filtered_numbers}")
 
@@ -292,29 +300,49 @@ def filter_practice():
 # =============================================
 # STEP 2: Program Introduction
 # =============================================
-def main():
-    """Main program entry point"""
+def program_introduction():
+    """Display program introduction"""
     print("="*50)
     print("        Welcome to Smart Calculator")
     print("="*50)
+
+def main():
+    """Main program entry point - organizes all tasks"""
     
-    # STEP 6: Demonstrate global scope
+    # STEP 2: Program Introduction
+    program_introduction()
+    
+    # STEP 6: Demonstrate global scope (Separate Task)
     print_app_name()
     
-    # Run the main calculator
+    # ==========================================
+    # MINI PROJECT: Steps 2-5 (Calculator)
+    # ==========================================
+    print("\n" + "="*50)
+    print("    STARTING SMART CALCULATOR")
+    print("="*50)
     main_calculator()
     
-    # STEP 7: Lambda practice
+    # ==========================================
+    # SEPARATE PRACTICE TASKS: Steps 6-9
+    # ==========================================
+    print("\n" + "="*50)
+    print("    SEPARATE PRACTICE TASKS")
+    print("="*50)
+    
+    # STEP 6: Already demonstrated with print_app_name()
+    # STEP 7: Lambda Practice
     lambda_practice()
     
-    # STEP 8: Map practice
+    # STEP 8: Map Practice
     map_practice()
     
-    # STEP 9: Filter practice
+    # STEP 9: Filter Practice
     filter_practice()
     
+    # Program completion message
     print("\n" + "="*50)
-    print("        Thank you for using Smart Calculator!")
+    print("        All tasks completed successfully!")
     print("="*50)
 
 
