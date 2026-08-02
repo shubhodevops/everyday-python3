@@ -1,0 +1,8 @@
+# Testing Framework
+pytest==8.3.2
+
+# Code Quality & Linting
+flake8==7.1.1
+
+# Optional but recommended extensions for CI workflows
+pytest-cov==6.0.0
