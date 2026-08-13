@@ -40,4 +40,5 @@ print(f"Height of rectangle is {s.height}") #print height of rectangle
     # is used to initialize the instance variables of the class
 # object is an instance of a class that has its own state and behavior
 # object and instance are same thing and can be used interchangeably
-#      
+# theory of object oriented programming is based on the concept of objects and classes
+# object oriented programming is a programming paradigm that uses objects and classes to design and implement programs     
