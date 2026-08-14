@@ -24,6 +24,9 @@ print(f"Rectangle perimeter is {perimeter}") #print rectangle perimeter
 print(f"Length of rectangle is {s.length}") #print length of rectangle  
 print(f"Height of rectangle is {s.height}") #print height of rectangle  
 
+#-------------------------------------------------------------------------#
+
+
 # knoledge of object oriented programming is important to understand the concept of classes and objects in python------------------------
 
 
