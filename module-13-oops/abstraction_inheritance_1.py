@@ -3,18 +3,18 @@
 
 # * মূল কাজ: জটিলতা কমানোর জন্য ভেতরের কোড বা লজিক লুকিয়ে রাখা হয়।
 # * বাস্তবায়ন: সাধারণত অ্যাবস্ট্রাক্ট ক্লাস (Abstract Class) এবং ইন্টারফেস (Interface) ব্যবহার করে এটি করা হয়।
-# * সুবিধা: কোড সহজে পরিবর্তন করা যায় এবং ব্যবহারকারী শুধু কাজের অংশটি দেখতে পান। যেমন: গাড়ি চালানোর সময় ব্রেক বা এক্সিলারেটর কীভাবে কাজ করে না জেনেও শুধু তা ব্যবহার করা। [1, 2, 4, 5] 
+# * সুবিধা: কোড সহজে পরিবর্তন করা যায় এবং ব্যবহারকারী শুধু কাজের অংশটি দেখতে পান। যেমন: গাড়ি চালানোর সময় ব্রেক বা এক্সিলারেটর কীভাবে কাজ করে না জেনেও শুধু তা ব্যবহার করা।  
 
 # ## ইনহেরিটেন্স (Inheritance)
 
 # * মূল কাজ: একটি প্যারেন্ট (Parent/Super) ক্লাস থেকে চাইল্ড (Child/Sub) ক্লাসে কোড বা বৈশিষ্ট্য আদান-প্রদান করা।
 # * কোড রিইউজেবিলিটি: একই কোড বারবার না লিখে এক জায়গা থেকে বারবার ব্যবহার করা যায়।
-# * সম্পর্ক তৈরি: ক্লাসগুলোর মধ্যে একটি Parent-Child বা Is-a সম্পর্ক তৈরি করে। যেমন: Car ক্লাসটি Vehicle ক্লাস থেকে ইনহেরিট করতে পারে। [1, 3, 6, 7, 8] 
+# * সম্পর্ক তৈরি: ক্লাসগুলোর মধ্যে একটি Parent-Child বা Is-a সম্পর্ক তৈরি করে। যেমন: Car ক্লাসটি Vehicle ক্লাস থেকে ইনহেরিট করতে পারে। 
 
 # ## মূল পার্থক্য
 
 # * Abstraction: ফোকাস করে কী (What) কাজ করবে তার ওপর, কীভাবে (How) কাজ করবে তা লুকিয়ে রাখে।
-# * Inheritance: ফোকাস করে কোডের পুনঃব্যবহার এবং সম্পর্ক তৈরির ওপর। [1, 3, 8, 9] 
+# * Inheritance: ফোকাস করে কোডের পুনঃব্যবহার এবং সম্পর্ক তৈরির ওপর। 
 
 # আপনি কি এই বিষয়গুলো কোনো নির্দিষ্ট প্রোগ্রামিং ভাষায় (যেমন Java, C++, Python) কোডসহ দেখতে চান?
 
@@ -23,7 +23,7 @@
 # and real-life analogies.
 
 # 1. Abstraction (লুকিয়ে রাখা)Direct Answer: Abstraction means hiding the complex background details and showing only the essential features to the user. 
-# It answers the question: "What does this object do?" without worrying about "How does it do it?" [1]Real-Life Analogy: The Coffee MachineWhen you want coffee, you just press a button. 
+# It answers the question: "What does this object do?" without worrying about "How does it do it?" Real-Life Analogy: The Coffee MachineWhen you want coffee, you just press a button. 
 # You do not need to know how the machine heats the water, grinds the beans, or pumps the liquid. 
 # The internal mechanics are abstracted (hidden) from you. You only interact with the simple interface (the button).
 # How it works in PythonPython uses the abc (Abstract Base Classes) module to create abstract classes.
@@ -58,7 +58,7 @@ my_machine.brew_coffee()  # The user just calls this, ignoring the details insid
 
 
 # 2. Inheritance (উত্তরাধিকার)
-# Direct Answer: Inheritance is a way to create a new class using the features of an existing class. The old class is called the Parent (or Base) Class, and the new one is the Child (or Derived) Class. It creates an "Is-A" relationship (e.g., a Car is a Vehicle). [1, 2, 3, 4, 5]
+# Direct Answer: Inheritance is a way to create a new class using the features of an existing class. The old class is called the Parent (or Base) Class, and the new one is the Child (or Derived) Class. It creates an "Is-A" relationship (e.g., a Car is a Vehicle). 
 # Real-Life Analogy: Parents and Children
 # Think of a parent passing down traits like eye color, height, or last name to their child. The child automatically gets these traits but can also learn new skills or have unique hobbies that the parents do not have. [1, 2]
 # Key Benefits
